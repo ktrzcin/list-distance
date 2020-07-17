@@ -3,8 +3,10 @@ Simple script calculating distance between two lists as `min(|Ai - Bj|)`.
 
 ## Assumptions
 1. All input values are ints
-2. List A is sorted in descending manner
-3. List B is sorted in ascending manner
+2. List A is sorted in descending manner *
+3. List B is sorted in ascending manner **
+
+**\* and \*\* are not subjects of validation, these are asuumptions which do not change algorithm results**
 
 ## Input format
 ```
