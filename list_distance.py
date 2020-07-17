@@ -1,12 +1,15 @@
 import itertools
-import math
 import sys
-from typing import Iterable, Set, Union
+from typing import Generator, Iterable, Set, Union
 
 
-def get_ints_from_input(count: int) -> Iterable[int]:
-    """Read a single line from input and map it to int. Expects a space seperated list of values. Raises error."""
-    ints = map(int, input().split(" "))
+def get_ints_from_input(count: int) -> Generator[int, None, None]:
+    """
+    Read a single line from input and map it to int. Expects a
+    space seperated list of values. Raise ValueError if count
+    does not equal number of values to yield.
+    """
+    ints: Iterable[int] = map(int, input().split(" "))
     elements: int = 0
 
     while True:
@@ -24,6 +27,9 @@ def get_ints_from_input(count: int) -> Iterable[int]:
 
 
 def calculate_distance() -> int:
+    """
+    Calculates and returns distance between two lists red from stdin.
+    """
     n: int
     m: int
     n, m = get_ints_from_input(2)

@@ -10,6 +10,9 @@ PATH: str = pathlib.Path(__file__).parent.absolute() / "fixtures/"
 
 @contextmanager
 def patched_stdin(filename: str) -> None:
+    """
+    Patch stdin to yield values from file.
+    """
     with open(PATH / filename) as fd:
         with patch("sys.stdin", fd):
             yield
@@ -70,7 +73,7 @@ class MiscellaneousErrors(unittest.TestCase):
             with self.assertRaises(ValueError):
                 calculate_distance()
 
-    def test_unexpected_eof(self):
+    def test_float_in_args(self):
         with patched_stdin("float_in_args.txt"):
             with self.assertRaises(ValueError):
                 calculate_distance()
