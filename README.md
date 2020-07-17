@@ -33,3 +33,13 @@ Expected output is:
 ```console
 2
 ```
+
+## Running tests
+```console
+foo@bar:~$ python3 -m unittest tests/test_list_distance.py
+............
+----------------------------------------------------------------------
+Ran 12 tests in 0.001s
+
+OK
+```
