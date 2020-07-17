@@ -5,8 +5,8 @@ from typing import Iterable, Set, Union
 
 
 def get_ints_from_input(count: int) -> Iterable[int]:
-    '''Read a single line from input and map it to int. Expects a space seperated list of values. Raises error.'''
-    ints = map(int, input().split(' '))
+    """Read a single line from input and map it to int. Expects a space seperated list of values. Raises error."""
+    ints = map(int, input().split(" "))
     elements: int = 0
 
     while True:
@@ -20,9 +20,7 @@ def get_ints_from_input(count: int) -> Iterable[int]:
             break
 
     if elements != count:
-        raise ValueError(
-            "Invalid input, too many or too few values provided!"
-        )
+        raise ValueError("Invalid input, too many or too few values provided!")
 
 
 def calculate_distance() -> int:
@@ -36,7 +34,7 @@ def calculate_distance() -> int:
     if setA.intersection(setB):
         return 0
 
-    minimum: Union[int, None]  = None
+    minimum: Union[int, None] = None
     valA: int
     valB: int
     for valA, valB in itertools.product(setA, setB):
